@@ -1,0 +1,28 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<section class='project-grid'>
+
+		<div id="grid" class="gridalicious">
+
+			{% for i in 0..30 %}
+				<div class="item">
+					<a href="#">
+						<img src="http://chrisglass.com/album/wp-content/uploads/2011/06/0429-matt-moore-mural.jpg" alt="">
+						<h2>
+							Lorum Ipsum Dolor<br>
+							<span>WEB DESIGN + BUILD</span>
+						</h2>
+					</a>
+					
+				</div><!-- .item -->
+			{% endfor %}
+
+		</div><!-- .grid -->
+
+	</section>
+
+	
+	  
+{% endblock %}

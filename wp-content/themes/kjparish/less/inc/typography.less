@@ -1,0 +1,78 @@
+/* TYPOGRAPHY
+-------------------------------------------------------------------------------*/
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic|Playfair+Display:400,400italic);
+
+@base-font: "Roboto", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+@serif: "Playfair+Display", "Baskerville", "Georgia", serif;
+
+@base-font-size: 18px;
+
+.fontsmooth() {
+	-webkit-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-ms-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 1.25),
+	only screen and ( min-device-pixel-ratio: 1.25),
+	only screen and ( min-resolution: 200dpi),
+	only screen and ( min-resolution: 1.25dppx)
+	{
+		-webkit-font-smoothing: subpixel-antialiased;
+	}
+}
+
+
+/*-------------------------------------------------------------------------------*/
+
+html {
+	font-size: @base-font-size;
+	.fontsmooth();
+}
+
+
+
+html 				{-webkit-font-smoothing: antialiased;}
+body				{
+						font: 400 @base-font-size/140% @base-font;
+						.transition(all 100ms ease-in-out); 
+					}
+
+
+.caps 				{text-transform:uppercase; letter-spacing:.220em;}
+.bold, strong, b 	{font-weight:700;}
+em 					{font-style:italic;}
+
+
+a:link, a:visited, a:active {color:@link; text-decoration: none !important; .transition(all 100ms ease-in-out);  }
+a:hover {color:lighten(@link, 10%);}
+
+// Vars
+@small: 0.778em; // 14px
+@base-alt: 0.889em; // 16px
+@medium: 1.222em; // 22px
+@large: 2.222em; // 40px
+@xlarge: 3.389em; // 61px
+
+
+.page-title() {
+	font-size: @large;
+	font-family: @serif;
+	font-style: italic;
+}
+
+.smcaps() {
+	font-size: @small;
+	.caps;
+	.bold;
+}
+
+.callout() {
+	font-family: @serif;
+	font-size: @large;
+	line-height: 130%;
+}
+

@@ -1,0 +1,37 @@
+/* Media Queries
+-------------------------------------------------------------------------------*/
+
+@xxs: ~'only screen and (max-width : 320px)';
+@xs:  ~'only screen and (max-width : 640px)';
+@sm:  ~'only screen and (max-width : 768px)';
+@md:  ~'only screen and (max-width : 992px)';
+
+
+
+.button() {
+	background-color: @highlight;
+	color: @white;
+	.caps; 
+	.border-radius(0);
+	padding: .3em .5em;
+	display: block;
+	font-size: .7em;
+	.bold;
+	border: 0;
+	width: auto;
+	margin: 0;
+	&:hover {
+		background-color: @link;
+		text-decoration: none;
+	}
+}
+.border-top() {
+	&:before {
+		content: '';
+		display: block;
+		border-top: solid 4px @black;
+		padding-bottom: .5em;
+	}
+}
+
+

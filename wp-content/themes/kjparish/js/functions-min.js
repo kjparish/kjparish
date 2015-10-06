@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#grid").gridalicious({gutter:0,width:340}),$(".colorbox-link").colorbox({inline:!0,onClosed:function(){$("video").each(function(){this.player.pause()})}}),$("a").each(function(){var o=new RegExp("/"+window.location.host+"/");o.test(this.href)||$(this).click(function(o){o.preventDefault(),o.stopPropagation(),window.open(this.href,"_blank")})})});
