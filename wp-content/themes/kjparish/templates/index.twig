@@ -1,22 +1,27 @@
 {% extends "base.twig" %}
 
 {% block content %}
+	
+	<section class="intro">
+		<h2 class="subtitle">design + strategy</h2>
+		<h3 class="callout">brand, ux, technology</h3>
+	</section>
 
 	<section class='project-grid'>
 
 		<div id="grid" class="gridalicious">
 
 			{% for i in 0..30 %}
-				<div class="item">
-					<a href="#">
-						<img src="http://chrisglass.com/album/wp-content/uploads/2011/06/0429-matt-moore-mural.jpg" alt="">
-						<h2>
-							Lorum Ipsum Dolor<br>
-							<span>WEB DESIGN + BUILD</span>
-						</h2>
-					</a>
-					
-				</div><!-- .item -->
+				<a class="item" href="#">
+					<img src="http://chrisglass.com/album/wp-content/uploads/2011/06/0429-matt-moore-mural.jpg" alt="">
+					<div class="project-details">
+						<div class="wrap">
+							<h2 class="project-title">Lorum Ipsum Dolor</h2>
+							<h3 class="project-scope">WEB DESIGN + BUILD</h3>
+						</div>
+						
+					</div>
+				</a>
 			{% endfor %}
 
 		</div><!-- .grid -->

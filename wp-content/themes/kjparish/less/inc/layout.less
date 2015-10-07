@@ -27,3 +27,70 @@ body {
 	}
 }
 
+#grid {
+
+}
+.item {
+	padding: 0;
+	display: block;
+	border: solid 10px @eggshell;
+	background-color: transparent;
+	position: relative;
+	
+	img {
+		.opacity( 1 );
+		position: relative;
+		z-index: 1;
+		.transition( opacity 200ms ease-in-out);
+	}
+	.project-details {
+		
+		text-align: center;
+		background-color: @yellow;
+		color: @eggshell;
+		.opacity( 0 );
+		.transition( opacity 200ms ease-in-out);
+		
+		display: inline-block;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		left: 0;
+
+		.wrap {
+			.vertical-align();
+		}
+
+		.project-title {			
+			width: 100%;
+
+			.lgcaps();
+			font-size: @medium;
+
+			&:after {
+				content: '';
+				display: block;
+				margin: .6em auto;
+				width: 34px;
+				height: 3px;
+				background: @eggshell;
+			}
+		}
+		.project-scope {
+			display: block;
+			.smcaps();
+		}
+	}
+	&:hover {
+		img {
+			.opacity( 0.8 );
+		}
+		.project-details {
+			.opacity( 1 );
+		}
+	}
+}
+
+

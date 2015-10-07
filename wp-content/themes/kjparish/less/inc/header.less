@@ -5,11 +5,56 @@
 header {
 	background-color: @black;
 	text-align: center;
-	padding: 3em 0 0;
+	min-height: 400px;
+	height: 50vw;
+	position: relative;
+
+	a {
+		color: @eggshell;
+		.smcaps();
+		&:hover {
+			color: @link;
+		}
+	}
 	
 	h1 {
-		.make-sm-column(8);
-		.make-sm-column-offset(2);
-		margin-bottom: 0;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		bottom: 0px;
+		right: 0px;
+		margin: auto;
+		max-width: 28vh;
+		max-height: 100px;
+		padding: 1em;
+		a img {
+			.opacity( 1 );
+			.transition(opacity 200ms ease-in-out); 
+		}
+		a:hover {
+			img {
+				.opacity( 0.6 );
+			}
+		}
+	}
+	nav {
+		position: absolute;
+		bottom: 2em;
+		width: 100%;
+		ul {
+			text-align: center;
+			padding-left: 16px;
+			li {
+				display: inline-block;
+				color: @eggshell;
+				margin: 0 8px;
+				position: relative;
+				i {
+					font-size: 2em;
+					.vertical-align( absolute );
+					margin-top: -5px;
+				}
+			}
+		}
 	}
 }

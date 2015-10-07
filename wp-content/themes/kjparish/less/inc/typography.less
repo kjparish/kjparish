@@ -42,15 +42,24 @@ body				{
 					}
 
 
-.caps 				{text-transform:uppercase; letter-spacing:.220em;}
+.caps() 			{text-transform:uppercase; letter-spacing:.220em;}
 .bold, strong, b 	{font-weight:700;}
 em 					{font-style:italic;}
 
+a:link, a:visited, a:active, a:hover {
+	text-decoration: none; 
+	.transition(all 200ms ease-in-out); 
+}
 
-a:link, a:visited, a:active {color:@link; text-decoration: none !important; .transition(all 100ms ease-in-out);  }
-a:hover {color:lighten(@link, 10%);}
+section {
+	a:link, a:visited, a:active {
+		color:@link; 		 
+	}
+	a:hover {color:lighten(@link, 10%);}
+}
 
-// Vars
+
+// Font Size Vars
 @small: 0.778em; // 14px
 @base-alt: 0.889em; // 16px
 @medium: 1.222em; // 22px
@@ -58,19 +67,27 @@ a:hover {color:lighten(@link, 10%);}
 @xlarge: 3.389em; // 61px
 
 
-.page-title() {
+.page-title {
 	font-size: @large;
 	font-family: @serif;
 	font-style: italic;
 }
 
-.smcaps() {
+.smcaps,
+.subtitle {
 	font-size: @small;
-	.caps;
-	.bold;
+	.caps();
+	.bold();
 }
 
-.callout() {
+.lgcaps() {
+	text-transform: uppercase; 
+	letter-spacing: .120em;
+	.bold();
+	font-size: @medium;
+}
+
+.callout {
 	font-family: @serif;
 	font-size: @large;
 	line-height: 130%;
