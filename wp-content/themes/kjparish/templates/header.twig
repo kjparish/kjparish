@@ -1,18 +1,17 @@
-<header class="site-header">
+<header class="site-header" {% if project_color %}style="background-color:{{ project_color }};"{% endif %}>
 	<h1>
 		<a href="{{ site.url }}" title="KJ Parish">
-			<img src="{{ theme.path }}/images/logo.svg" alt="KJ Parish">
+			<img class="logo" src="{{ theme.path }}/images/logo.svg" alt="KJ Parish">
 		</a>
 	</h1>
-	<nav>
+	<nav class="primary-nav">
 		<ul>
-			<li>
-				<a href="/about">About</a>
-			</li>
-			<li><i class="icon-divide"></i></li>
-			<li>
-				<a href="#contact">Contact</a>
-			</li>
+			<li class="logo-alt"><a href="{{ site.url }}">KJ</a></li>
+			<li class="nav-link"><a href="{{ site.url }}">Projects</a></li>
+			<!-- <li><i class="icon-divide"></i></li> -->
+			<li class="nav-link"><a href="{{ site.url }}/about">About</a></li>
+			<!-- <li><i class="icon-divide"></i></li> -->
+			<li class="nav-link"><a href="#contact">Contact</a></li>
 		</ul>
 	</nav>
 </header>

@@ -1,1 +1,21 @@
-Copyright {{"now"|date('Y')}}
+<div class="wrap" id="contact">
+	<div class="col contact-details">
+		<ul>
+			<li>
+				<h5>Contact</h5>
+				<a href="mailto:kj@kjparish.com">kj@kjparish.com</a>
+			</li>
+			<li>
+				<h5>Links</h5>		
+				<a href="/">design deck</a><br />
+				<a href="/">recommendations</a><br />
+				<a href="/">resume</a>
+			</li>
+		</ul>		
+	</div>
+	<div class="col contact-form">
+		{% filter shortcodes %}
+			[contact-form-7 id="5"]
+		{% endfilter %}
+	</div>	
+</div>

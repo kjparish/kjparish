@@ -1,28 +1,81 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div class="content-wrapper">
-		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-			<section class="article-content">
-				<h1 class="article-h1">{{post.title}}</h1>
-				<p class="blog-author">
-					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> {{ post.post_date|date}}
-				</p>
-				<div class="article-body">
-					{{post.content}}
-				</div>
-			</section>
-			<section class="comments">
-				<div class="respond">
-					<h3 class="h2">Comments</h3>
-					{{ comment_form }}
-				</div>
-				<div class="responses">
-					{% for cmt in post.get_comments() %}
-						{% include "comment.twig" with {comment:cmt} %}
-					{% endfor %}
-				</div>
-			</section>
-		</article>
-	</div><!-- /content-wrapper -->
+
+	<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+	{% if post.get_field('hero_image') %}
+		<img class="hero" src="{{ TimberImage(post.get_field('hero_image')).src|resize(1920) }}" />
+	{% endif %}
+	
+	
+		<section class="article-content">
+			
+			<h1 class="page-title">{{ post.title }}</h1>
+			
+			<div class="article-body">
+
+				{% for content in content %}
+					{# text #}
+					{% if content.acf_fc_layout == 'text' %}
+						{{ content.text }}
+
+					{# small caps, with or without a link wrapper #}
+					{% elseif content.acf_fc_layout == 'smcaps' %}
+						{% if content.link %}
+							<h4>
+								<a href="{{ content.link }}">
+									{{ content.small_caps_title }}
+								</a>
+							</h4>
+						{% else %}
+							<h4>{{ content.small_caps_title }}</h4>
+						{% endif %}
+
+					{# callout #}
+					{% elseif content.acf_fc_layout == 'callout' %}
+						<div class="callout">
+							{{ function( 'wptexturize', content.callout ) }}
+						</div>
+
+					{# single image #}
+					{% elseif content.acf_fc_layout == 'single-image' %}
+						<div class="single-image">
+							<img src="{{ TimberImage(content.single_image).src|resize(1280) }}" />
+						</div>
+						
+
+					{# gallery #}
+					{% elseif content.acf_fc_layout == 'gallery' %}
+						<div class="multi-image">
+							{% for image in content.multi_images %}
+								<div class="col">
+									<img src="{{ TimberImage(image).src|resize(768, 400) }}" alt="{{ post.title }}" />
+								</div>
+							{% endfor %}
+						</div>
+					  
+					{% endif %}
+				{% endfor %}
+			</div>
+		</section>
+	</article>
+	<nav class="pagination">
+
+		{% if post.prev %}
+			<a class="left" href="{{ post.prev.permalink }}">
+				<i class="icon-arrow-left"></i>
+				<span>Previous</span>
+			</a>
+		{% endif %}
+
+		{% if post.next %}
+			<a class="right" href="{{ post.next.permalink }}">
+				<span>Next</span>
+				<i class="icon-arrow-right"></i>
+			</a>
+		{% endif %}
+	</nav>
+
+
+
 {% endblock %}

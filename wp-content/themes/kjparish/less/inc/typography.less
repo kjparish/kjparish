@@ -4,9 +4,10 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic|Playfair+Display:400,400italic);
 
 @base-font: "Roboto", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-@serif: "Playfair+Display", "Baskerville", "Georgia", serif;
+@serif: "Playfair Display", "Baskerville", "Georgia", serif;
 
 @base-font-size: 18px;
+@mobile-font-size: 16px;
 
 .fontsmooth() {
 	-webkit-font-smoothing: antialiased;
@@ -31,20 +32,33 @@
 html {
 	font-size: @base-font-size;
 	.fontsmooth();
+	@media @sm {
+		font-size: @mobile-font-size;
+	}
 }
 
-
-
-html 				{-webkit-font-smoothing: antialiased;}
 body				{
-						font: 400 @base-font-size/140% @base-font;
+						font-family: @base-font;
+						font-weight: 400;
+						line-height: 140%;
 						.transition(all 100ms ease-in-out); 
+						color: @black;
+						text-rendering: optimizeLegibility;
+						-webkit-font-feature-settings: "kern";
+						font-feature-settings: "kern";
+						font-kerning: normal;					
 					}
 
 
 .caps() 			{text-transform:uppercase; letter-spacing:.220em;}
 .bold, strong, b 	{font-weight:700;}
 em 					{font-style:italic;}
+
+.serif() {
+	font-family: @serif;
+	-webkit-font-variant-ligatures: discretionary-ligatures; 
+	font-variant-ligatures: discretionary-ligatures;
+}
 
 a:link, a:visited, a:active, a:hover {
 	text-decoration: none; 
@@ -58,6 +72,13 @@ section {
 	a:hover {color:lighten(@link, 10%);}
 }
 
+.blacklink() {
+	a:link, a:visited, a:active {
+		color:@black; 		 
+	}
+	a:hover {color:lighten(@black, 10%);}
+}
+
 
 // Font Size Vars
 @small: 0.778em; // 14px
@@ -68,13 +89,16 @@ section {
 
 
 .page-title {
-	font-size: @large;
+	font-size: @xlarge;
 	font-family: @serif;
 	font-style: italic;
+	line-height: 1em;
 }
 
 .smcaps,
-.subtitle {
+.subtitle,
+h4,
+h5 {
 	font-size: @small;
 	.caps();
 	.bold();
@@ -87,9 +111,14 @@ section {
 	font-size: @medium;
 }
 
-.callout {
-	font-family: @serif;
+.callout,
+blockquote p {
+	.serif();
 	font-size: @large;
-	line-height: 130%;
+	line-height: 1.4em;
+	font-weight: 400;
+	@media @xs {
+		font-size: 1.7em;
+	}
 }
 

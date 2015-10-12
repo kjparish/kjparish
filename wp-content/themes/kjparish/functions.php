@@ -51,9 +51,9 @@ class StarterSite extends TimberSite {
 //Custom Logo for Login Screen
 // Replace IMAGELOCATION with your image filename
 function my_custom_login_logo() {
-    echo '<style type="text/css">
-        .login h1 a { background-image:url('.get_bloginfo('template_directory').'/images/) !important; height:260px !important; background-size:210px 221px!important; }
-    </style>';
+	echo '<style type="text/css">
+		.login h1 a { background-image:url('.get_bloginfo('template_directory').'/images/) !important; height:260px !important; background-size:210px 221px!important; }
+	</style>';
 }
 add_action('login_head', 'my_custom_login_logo');
 
@@ -62,4 +62,23 @@ new StarterSite();
 function myfoo( $text ) {
 	$text .= ' bar!';
 	return $text;
+}
+
+// Hide admin bar
+add_filter('show_admin_bar', '__return_false');
+
+// Add Mobile Body Class "wp-is-mobile" for mobile
+add_filter( 'body_class', 'mobile_detect_class' );
+function mobile_detect_class( $classes ) {
+	
+	/* using mobile browser */
+		if ( wp_is_mobile() ){
+			$classes[] = 'is-mobile';
+		}
+	   else{
+			$classes[] = 'is-desktop';
+		}
+
+	return $classes;
+	
 }

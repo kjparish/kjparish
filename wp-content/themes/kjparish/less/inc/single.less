@@ -1,0 +1,148 @@
+/* SINGLE / PROJECT
+-------------------------------------------------------------------------------*/
+
+.single {
+	.page-title {
+		.make-sm-column(12);
+		@media @xs {
+			font-size: 2em;
+		}
+	}
+}
+
+.hero {
+	width: 100%;
+}
+
+
+.article-body {
+	overflow: visible;
+	p {
+		& + p {
+			margin-top: 2em ;
+		}
+		line-height: 1.7em;
+		.make-sm-column(8);
+		.make-sm-column-offset(2);
+	}
+	.callout p,
+	blockquote p {
+		line-height: 1.4em;
+		margin-top: 1em;
+		.divide();
+	}
+	h4 {
+		margin: 4em 0 1em;
+		.make-sm-column(12);
+		clear: both;
+		& + .callout p,
+		& + blockquote p {
+			margin-top: 0;
+			margin-bottom: 2em;
+		}
+		@media @xs {
+			margin: 2em 0 1em;
+		}
+	}
+	.single-image {
+		.make-sm-column(12);
+		img {
+			margin: 2em auto;
+		}
+	}
+	.multi-image {
+		clear: both;
+		padding-top: 2em;
+		padding-bottom: 2em;
+		.col {
+			.make-sm-column(6);
+		}
+	}
+}
+
+.article-content {
+	.page-max-width();
+	.page-title {
+		margin: 1.5em 0 1em;
+		color: lighten(@black, 20%)
+	}
+}
+
+.pagination {
+	position: fixed;
+	top: 50vh;
+	width: 100%;
+	@media @sm {
+		top: auto;
+		position: relative;
+		margin: 1em 0;
+	}
+	a {
+		i,
+		span {
+			.transition( all 200ms ease-in-out);
+		}
+		
+		position: absolute;
+		top: 0;
+		&.left {
+			left: 15px;
+			span {
+				padding-left: 5em;
+			}
+			@media @sm {
+				left: 8px;
+			}
+		}
+		&.right {
+			right: 15px;
+			span {
+				padding-right: 4em;
+			}
+			@media @sm {
+				right: 8px;
+			}
+		}
+		@media @sm {
+			&:before {
+				content: '';
+				display: block;
+				width: 30px;
+				height: 38px;
+				background-color: rgba(0, 0, 0, .4);
+				position: absolute;
+				top: -5px;
+				z-index: -1;
+				left: -8px;
+			}
+		}
+	}
+	i {
+		color: @eggshell;
+		font-size: 4em;
+		@media @sm {
+			font-size: 1.6em;
+		}
+	}
+	span {
+		.opacity( 0 );
+		.serif();
+		font-style: italic;
+		color: @eggshell;
+		font-size: 1.7em;
+		.vertical-align( absolute );	
+		@media @sm {
+			display: none;
+		}
+	}
+	a:hover {
+		i {
+			color: lighten(@black, 50%);
+			font-size: 5em;
+		}
+		span {
+			.opacity( 1 );
+			color: lighten(@black, 50%);
+		}
+	}
+}
