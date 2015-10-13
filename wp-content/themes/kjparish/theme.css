@@ -1397,6 +1397,7 @@ blockquote p {
   margin: 3em auto;
 }
 .article-body .multi-image {
+  position: relative;
   clear: both;
   padding-top: 3em;
   padding-bottom: 3em;
