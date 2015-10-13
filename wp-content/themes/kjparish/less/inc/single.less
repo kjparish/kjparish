@@ -15,6 +15,17 @@
 
 .hero {
 	margin: 0 auto;
+	// &.mobile {
+	// 	display: none;
+	// }
+	// @media @sm {
+	// 	&.desktop {
+	// 		display: none;
+	// 	}
+	// 	&.mobile {
+	// 		display: block;
+	// 	}
+	// }
 }
 
 .article-body {
@@ -62,12 +73,24 @@
 			.make-sm-column(6);
 		}
 	}
+	@media @sm {
+		.single-image img,
+		.multi-image img {
+			margin: 1em 0;
+		}
+		.multi-image {
+			padding: 0;
+			img {
+				padding: 1em 0;
+			}
+		}
+	}
 }
 
 .article-content {
 	.page-max-width();
 	.page-title {
-		margin: 1.5em 0 1em;
+		margin: .4em 0 .4em;
 		color: lighten(@black, 20%)
 	}
 }
