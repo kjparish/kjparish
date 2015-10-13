@@ -40,7 +40,7 @@
 					{# single image #}
 					{% elseif content.acf_fc_layout == 'single-image' %}
 						<div class="single-image">
-							<img src="{{ TimberImage(content.single_image).src|resize(1280) }}" />
+							<img src="{{ TimberImage(content.single_image).src }}" />
 						</div>
 						
 
