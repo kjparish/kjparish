@@ -1185,7 +1185,6 @@ textarea {
 }
 /* TYPOGRAPHY
 -------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
 html {
   font-size: 18px;
   -webkit-font-smoothing: antialiased;
@@ -1236,6 +1235,9 @@ a:hover {
   -webkit-transition: all 200ms ease-in-out;
   -o-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
+}
+a {
+  cursor: pointer;
 }
 section a:link,
 section a:visited,
