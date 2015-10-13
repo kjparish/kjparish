@@ -49,7 +49,7 @@
 						<div class="multi-image">
 							{% for image in content.multi_images %}
 								<div class="col">
-									<img src="{{ TimberImage(image).src|resize(768, 400) }}" alt="{{ post.title }}" />
+									<img src="{{ TimberImage(image).src|resize(768) }}" alt="{{ post.title }}" />
 								</div>
 							{% endfor %}
 						</div>
