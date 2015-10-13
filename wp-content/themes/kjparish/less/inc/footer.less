@@ -117,11 +117,24 @@ footer {
 	}
 
 	input:focus, textarea:focus {
-	    outline: none;
+		outline: none;
+		color: lighten(@black, 20%)
 	}
 	input:focus::-webkit-input-placeholder {
 		transition: opacity 0.5s 0.5s ease; 
 		opacity: 0;
 	}
-}
 
+	// Contact form responses
+	div.wpcf7-mail-sent-ok,
+	div.wpcf7-validation-errors {
+		border: 0;
+		clear: both;
+		padding: 2em 0;
+		font-size: 16px;
+		text-align: left;
+	}
+}
+div.wpcf7-validation-errors {
+    color: red;
+}

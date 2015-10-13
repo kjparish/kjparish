@@ -14,7 +14,11 @@
 			{% for post in posts %}
 				<a class="item" href="{{ post.permalink }}">
 					<img class="hero" src="{{ TimberImage(post.get_field('project_grid_image')).src|resize(768) }}" />
-					<div class="project-details" {% if post.get_field('project_color') %}style="background-color:{{ post.get_field('project_color') }}"{% endif %}>
+					
+					{# Get the project color, and convert hex to RGBA #}
+					{% set color = function( 'hex2rgb', post.get_field('project_color')) %}		
+
+					<div class="project-details" {% if post.get_field('project_color') %}style="background-color:rgba({{ color[0] }}, {{ color[1] }}, {{ color[2] }}, .9)"{% endif %}>
 						<div class="wrap">
 							<h2 class="project-title">{{ post.post_title }}</h2>
 							<h3 class="project-scope">{{post.get_field('project_scope')}}</h3>

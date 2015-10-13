@@ -2,6 +2,9 @@
 -------------------------------------------------------------------------------*/
 
 .single {
+	header {
+		background-color: @black;
+	}
 	.page-title {
 		.make-sm-column(12);
 		@media @xs {
@@ -11,7 +14,7 @@
 }
 
 .hero {
-	width: 100%;
+	margin: 0 auto;
 }
 
 
@@ -54,6 +57,7 @@
 		clear: both;
 		padding-top: 2em;
 		padding-bottom: 2em;
+		overflow: auto;
 		.col {
 			.make-sm-column(6);
 		}
@@ -136,6 +140,7 @@
 		}
 	}
 	a:hover {
+		cursor: pointer;
 		i {
 			color: lighten(@black, 50%);
 			font-size: 5em;

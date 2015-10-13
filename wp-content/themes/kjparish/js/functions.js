@@ -1,43 +1,28 @@
 /* trigger when page is ready */
 $(document).ready(function (){
 
-$('#grid').gridalicious({
-	gutter: 0,
-	width: 340
-});
-
-
-// Contact Form 7
-
-$('.wpcf7-form').find('p').contents().unwrap();
-$('.wpcf7-form').find('span').contents().unwrap();
-$('input[type="checkbox"]').attr('id', 'signup');
-
-$('.signup').click(function() {
-		if ($('#signup').attr('checkbox')) {
-				$('#signup').removeAttr('checkbox');
-		} else {
-				$('#signup').attr('checkbox', 'checked');
-		}
-});
-
-
-
-	// Open External Links in New Window
-	$('a').each(function() {
-	var a = new RegExp('/' + window.location.host + '/');
-		if(!a.test(this.href)) {
-		$(this).click(function(event) {
-					 event.preventDefault();
-					 event.stopPropagation();
-					 window.open(this.href, '_blank');
-				});
-		 }
+	$('#grid').gridalicious({
+		gutter: 0,
+		width: 340
 	});
 
-// Scroll Animations, Desktop
+
+	// Contact Form 7
+
+	$('.wpcf7-form').find('p').contents().unwrap();
+	$('.wpcf7-form').find('span').contents().unwrap();
+	$('input[type="checkbox"]').attr('id', 'signup');
+
+	$('.signup').click(function() {
+			if ($('#signup').attr('checkbox')) {
+					$('#signup').removeAttr('checkbox');
+			} else {
+					$('#signup').attr('checkbox', 'checked');
+			}
+	});
 
 
+	// Scroll Animations, Desktop + Mobile
 	$(function() {
 			var isMobile =  $('body').hasClass('is-mobile');
 			// var isDesktop =  $('body').hasClass('is-desktop');
@@ -86,6 +71,16 @@ $('.signup').click(function() {
 					}
 			});
 	});
+
+	$(function(){
+		if($('body').is('.single')) {
+			var projectColor = $('.single header').attr('id');  
+			$('.single header').css('transition', '3s');
+			$('.single header').css('background', projectColor);
+		}
+	});
+
+	
 
 });
 

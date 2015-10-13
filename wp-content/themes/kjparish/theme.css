@@ -1294,6 +1294,9 @@ blockquote p {
 }
 /* SINGLE / PROJECT
 -------------------------------------------------------------------------------*/
+.single header {
+  background-color: #2d2d2d;
+}
 .single .page-title {
   position: relative;
   min-height: 1px;
@@ -1312,7 +1315,7 @@ blockquote p {
   }
 }
 .hero {
-  width: 100%;
+  margin: 0 auto;
 }
 .article-body {
   overflow: visible;
@@ -1395,6 +1398,7 @@ blockquote p {
   clear: both;
   padding-top: 2em;
   padding-bottom: 2em;
+  overflow: auto;
 }
 .article-body .multi-image .col {
   position: relative;
@@ -1508,6 +1512,9 @@ blockquote p {
   .pagination span {
     display: none;
   }
+}
+.pagination a:hover {
+  cursor: pointer;
 }
 .pagination a:hover i {
   color: #adadad;
@@ -1638,10 +1645,10 @@ body .wrapper img {
 }
 .item:hover .project-details {
   zoom: 1;
-  -webkit-opacity: 0.8;
-  -moz-opacity: 0.8;
-  opacity: 0.8;
-  filter: alpha(opacity=80);
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  filter: alpha(opacity=100);
 }
 /* HEADER
 -------------------------------------------------------------------------------*/
@@ -2051,10 +2058,22 @@ footer form input[type="submit"]:hover {
 footer input:focus,
 footer textarea:focus {
   outline: none;
+  color: #606060;
 }
 footer input:focus::-webkit-input-placeholder {
   transition: opacity 0.5s 0.5s ease;
   opacity: 0;
+}
+footer div.wpcf7-mail-sent-ok,
+footer div.wpcf7-validation-errors {
+  border: 0;
+  clear: both;
+  padding: 2em 0;
+  font-size: 16px;
+  text-align: left;
+}
+div.wpcf7-validation-errors {
+  color: red;
 }
 /* SIDEBAR
 -------------------------------------------------------------------------------*/

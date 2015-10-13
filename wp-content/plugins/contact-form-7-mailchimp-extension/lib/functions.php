@@ -28,42 +28,42 @@ function wpcf7_mch_add_mailchimp($args) {
 	<div class="mce-main-fields">
 
 		<p class="mail-field">
-		<label for="wpcf7-mailchimp-name"><?php echo esc_html( __( 'Subscriber Name:', 'wpcf7' ) ); ?>  <a href="http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension" class="helping-field" target="_blank" title="get help with Subscriber Name">Help?</a></label><br />
+		<label for="wpcf7-mailchimp-name"><?php echo esc_html( __( 'Subscriber Name:', 'wpcf7' ) ); ?>  <a href="<?php echo MCE_URL ?>" class="helping-field" target="_blank" title="get help with Subscriber Name"> Help <span class="red-icon dashicons dashicons-sos"></span></a></label><br />
 		<input type="text" id="wpcf7-mailchimp-name" name="wpcf7-mailchimp[name]" class="wide" size="70" placeholder="[your-name] <= Make sure this the name of your form field" value="<?php echo (isset ($cf7_mch['name'] ) ) ? esc_attr( $cf7_mch['name'] ) : ''; ?>" />
 		</p>
 
 
 		<p class="mail-field">
-			<label for="wpcf7-mailchimp-email"><?php echo esc_html( __( 'Subscriber Email:', 'wpcf7' ) ); ?>  <a href="http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension" class="helping-field" target="_blank" title="get help with Subscriber Email:">Help?</a></label><br />
+			<label for="wpcf7-mailchimp-email"><?php echo esc_html( __( 'Subscriber Email:', 'wpcf7' ) ); ?>  <a href="<?php echo MCE_URL ?>" class="helping-field" target="_blank" title="get help with Subscriber Email:"> Help <span class="red-icon dashicons dashicons-sos"></span></a></label><br />
 			<input type="text" id="wpcf7-mailchimp-email" name="wpcf7-mailchimp[email]" class="wide" size="70" placeholder="[your-email] <= Make sure this the name of your form field" value="<?php echo (isset ( $cf7_mch['email'] ) ) ? esc_attr( $cf7_mch['email'] ) : ''; ?>" />
 		</p>
 
 
 		<p class="mail-field">
-		<label for="wpcf7-mailchimp-accept"><?php echo esc_html( __( 'Required Acceptance Field:', 'wpcf7' ) ); ?>  <a href="http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-opt-in-checkbox" class="helping-field" target="_blank" title="get help with Required Acceptance Field - Opt-in">Help?</a></label><br />
+		<label for="wpcf7-mailchimp-accept"><?php echo esc_html( __( 'Required Acceptance Field:', 'wpcf7' ) ); ?>  <a href="<?php echo MCE_URL ?>/mailchimp-opt-in-checkbox" class="helping-field" target="_blank" title="get help with Required Acceptance Field - Opt-in"> Help <span class="red-icon dashicons dashicons-sos"></span></a></label><br />
 		<input type="text" id="wpcf7-mailchimp-accept" name="wpcf7-mailchimp[accept]" class="wide" size="70" placeholder="[opt-in] <= Leave Empty if you are not using the checkbox or read the link above" value="<?php echo (isset($cf7_mch['accept'])) ? $cf7_mch['accept'] : '';?>" />
 		</p>
 
 
 		<p class="mail-field">
-		<label for="wpcf7-mailchimp-api"><?php echo esc_html( __( 'MailChimp API Key:', 'wpcf7' ) ); ?>  <a href="http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-api-key" class="helping-field" target="_blank" title="get help with MailChimp API Key">Help?</a></label><br />
+		<label for="wpcf7-mailchimp-api"><?php echo esc_html( __( 'MailChimp API Key:', 'wpcf7' ) ); ?>  <a href="<?php echo MCE_URL ?>/mailchimp-api-key" class="helping-field" target="_blank" title="get help with MailChimp API Key"> Help <span class="red-icon dashicons dashicons-sos"></span></a></label><br />
 		<input type="text" id="wpcf7-mailchimp-api" name="wpcf7-mailchimp[api]" class="wide" size="70" placeholder="6683ef9bdef6755f8fe686ce53bdf73a-us4" value="<?php echo (isset($cf7_mch['api']) ) ? esc_attr( $cf7_mch['api'] ) : ''; ?>" />
 		</p>
 
 		<p class="mail-field">
-		<label for="wpcf7-mailchimp-list"><?php echo esc_html( __( 'MailChimp List ID:', 'wpcf7' ) ); ?>  <a href="http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-list-id" class="helping-field" target="_blank" title="get help with MailChimp List ID">Help?</a></label><br />
+		<label for="wpcf7-mailchimp-list"><?php echo esc_html( __( 'MailChimp List ID:', 'wpcf7' ) ); ?>  <a href="<?php echo MCE_URL ?>/mailchimp-list-id" class="helping-field" target="_blank" title="get help with MailChimp List ID"> Help <span class="red-icon dashicons dashicons-sos"></span></a></label><br />
 		<input type="text" id="wpcf7-mailchimp-list" name="wpcf7-mailchimp[list]" class="wide" size="70" placeholder="5d4e8a6072" value="<?php echo (isset( $cf7_mch['list']) ) ?  esc_attr( $cf7_mch['list']) : '' ; ?>" />
 		</p>
 
 		<p class="mail-field">
 		<input type="checkbox" id="wpcf7-mailchimp-conf-subs" name="wpcf7-mailchimp[confsubs]" value="1"<?php echo ( isset($cf7_mch['confsubs']) ) ? ' checked="checked"' : ''; ?> />
-		<label for="wpcf7-mailchimp-double-opt-in"><b><?php echo esc_html( __( 'Enable Double Opt-in (checked = true)', 'wpcf7' ) ); ?></b></label>
+		<label for="wpcf7-mailchimp-double-opt-in"><b><?php echo esc_html( __( 'Enable Double Opt-in (checked = true)', 'wpcf7' ) ); ?></b>   <a href="<?php echo MCE_URL ?>" class="helping-field" target="_blank" title="get help with Custom Fields"> Help <span class="red-icon dashicons dashicons-sos"></span></a></label>
 		</p>
 
 
 		<p class="mail-field">
 		<input type="checkbox" id="wpcf7-mailchimp-cf-active" name="wpcf7-mailchimp[cfactive]" value="1"<?php echo ( isset($cf7_mch['cfactive']) ) ? ' checked="checked"' : ''; ?> />
-		<label for="wpcf7-mailchimp-cfactive"><?php echo esc_html( __( 'Use Custom Fields', 'wpcf7' ) ); ?>  <a href="http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension" class="helping-field" target="_blank" title="get help with Custom Fields">Help?</a></label>
+		<label for="wpcf7-mailchimp-cfactive"><?php echo esc_html( __( 'Use Custom Fields', 'wpcf7' ) ); ?>  <a href="<?php echo MCE_URL ?>" class="helping-field" target="_blank" title="get help with Custom Fields"> Help <span class="red-icon dashicons dashicons-sos"></span></a></label>
 		</p>
 
 	</div>
@@ -91,9 +91,9 @@ function wpcf7_mch_add_mailchimp($args) {
 
 	<div class="mce-container">
 
-		<p class="p-author">This <a href="http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension" title="This FREE WordPress plugin" alt="This FREE WordPress plugin">FREE WordPress plugin</a> is currently developed in Orlando, Florida by <a href="//renzojohnson.com" target="_blank" title="Front End Developer: Renzo Johnson" alt="Front End Developer: Renzo Johnson">Renzo Johnson</a>. Feel free to contact with your comments or suggestions.</p>
+		<p class="p-author">This <a href="<?php echo MCE_URL ?>" title="This FREE WordPress plugin" alt="This FREE WordPress plugin">FREE WordPress plugin</a> is currently developed in Orlando, Florida by <a href="//renzojohnson.com" target="_blank" title="Front End Developer: Renzo Johnson" alt="Front End Developer: Renzo Johnson">Renzo Johnson</a>. Feel free to contact with your comments or suggestions.</p>
 
-		<p class="p-author"><button type="button" aria-expanded="false" class="mce-trigger a-support ">Show Your Support</button></p>
+		<p class="p-author"><a type="button" aria-expanded="false" class="mce-trigger a-support ">Show Your Support</a></p>
 
 	</div>
 
@@ -166,12 +166,12 @@ function spartan_mce_author_wpcf7($mce_supps) {
 
 	if($cfsupp==1)	 {
 
-	 	$mce_supps .= mce_referer($mce_referer);
-	 	$mce_supps .= mce_author($mce_author);
+	 	$mce_supps .= mce_referer();
+	 	$mce_supps .= mce_author();
 
 	 } else {
 
-	 	$mce_supps .= mce_referer($mce_referer);
+	 	$mce_supps .= mce_referer();
 	 	$mce_supps .= '<!-- Chimpmail extension by Renzo Johnson -->';
 
 	 }
@@ -223,8 +223,7 @@ function wpcf7_mch_subscribe($obj) {
 	//exit(0);
 	$submission = WPCF7_Submission::get_instance();
 
-	if( $cf7_mch )
-	{
+	if( $cf7_mch ) {
 		$subscribe = false;
 
 		$regex = '/\[\s*([a-zA-Z_][0-9a-zA-Z:._-]*)\s*\]/';
@@ -236,7 +235,22 @@ function wpcf7_mch_subscribe($obj) {
 		$lists = cf7_mch_tag_replace( $regex, $cf7_mch['list'], $submission->get_posted_data() );
 		$listarr = explode(',',$lists);
 
-		$merge_vars=array('FNAME'=>$name);//By default the key label for the name must be FNAME
+		$merge_vars=array('FNAME'=>$name);// *x1
+
+				// *x2
+				$parts = explode(" ", $name);
+				if(count($parts)>1) { // *x3
+
+					$lastname = array_pop($parts);
+					$firstname = implode(" ", $parts);
+					$merge_vars=array('FNAME'=>$firstname, 'LNAME'=>$lastname);
+
+				} else { // *x4
+
+					$merge_vars=array('FNAME'=>$name);// *x5
+
+				}
+
 
 		if( isset($cf7_mch['accept']) && strlen($cf7_mch['accept']) != 0 )
 		{
@@ -265,17 +279,13 @@ function wpcf7_mch_subscribe($obj) {
 
 		}
 
-		if( isset($cf7_mch['confsubs']) && strlen($cf7_mch['confsubs']) != 0 )
-		{
-			$ConfirmSubscription = true;
-		}
-			else
-		{
-			$ConfirmSubscription = false;
+		if( isset($cf7_mch['confsubs']) && strlen($cf7_mch['confsubs']) != 0 ) {
+			$mce_csu = true;
+		} else {
+			$mce_csu = false;
 		}
 
-		if($subscribe && $email != $cf7_mch['email'])
-		{
+		if($subscribe && $email != $cf7_mch['email']) {
 
 			if (!class_exists('Mailchimp'))
 			{
@@ -285,20 +295,31 @@ function wpcf7_mch_subscribe($obj) {
 			$wrap = new Mailchimp($cf7_mch['api']);
 			$Mailchimp = new Mailchimp( $cf7_mch['api'] );
 			$Mailchimp_Lists = new Mailchimp_Lists($Mailchimp);
-			// check if subscribed
+			// *x6
 			try {
-					foreach($listarr as $listid)
-					{
+
+					foreach($listarr as $listid) {
         		$listid = trim($listarr[0]);
-        		$result = $wrap->lists->subscribe($listid, array('email'=>$email), $merge_vars, true, $ConfirmSubscription, false, false);
+        		$result = $wrap->lists->subscribe($listid,
+					        			array('email'=>$email),
+					        			$merge_vars,
+					        			'html', //*xbh
+					        			$mce_csu, //*xaw
+					        			true, //*xxz
+					        			false, //*xrd
+					        			false // *xgr
+					        		);
 					}
-			} catch (Exception $e)
-			 	{
+
+			} catch (Exception $e) {
+
       		//echo 'Error, check your error log file for details';
 		 			error_log($e->getMessage(), 0);
 		 			error_log($e->getMessage(), 1);
+
     		}
 		}
+
 	}
 
 }
@@ -315,3 +336,5 @@ function spartan_mce_class_attr( $class ) {
 add_filter( 'wpcf7_form_class_attr', 'spartan_mce_class_attr' );
 
 
+/// error_reporting(E_ALL);
+/// ini_set("display_errors", 1);

@@ -4,7 +4,7 @@
 
 	<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
 	{% if post.get_field('hero_image') %}
-		<img class="hero" src="{{ TimberImage(post.get_field('hero_image')).src|resize(1920) }}" />
+		<img class="hero" src="{{ TimberImage(post.get_field('hero_image')).src }}" />
 	{% endif %}
 	
 	
@@ -23,7 +23,7 @@
 					{% elseif content.acf_fc_layout == 'smcaps' %}
 						{% if content.link %}
 							<h4>
-								<a href="{{ content.link }}">
+								<a href="{{ content.link }}" target="_blank">
 									{{ content.small_caps_title }}
 								</a>
 							</h4>
