@@ -1,0 +1,6 @@
+[Oct 13 2015 20:14:18] ERROR_HANDLER 
+Number:  2
+Message: Invalid argument supplied for foreach()
+File:    /Applications/AMPPS/www/kjparish/wp-admin/includes/class-wp-posts-list-table.php
+Line:    1475
+-------------------------------------------- 
