@@ -84,10 +84,15 @@
 		position: relative;
 		clear: both;
 		padding-top: 3em;
-		padding-bottom: 3em;
 		overflow: auto;
 		.col {
 			.make-sm-column(6);
+			img {
+				padding-bottom: 3em;
+			}
+			&.block {
+				clear: left;
+			}
 		}
 	}
 	@media @sm {

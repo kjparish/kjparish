@@ -1465,7 +1465,6 @@ blockquote p {
   position: relative;
   clear: both;
   padding-top: 3em;
-  padding-bottom: 3em;
   overflow: auto;
 }
 .article-body .multi-image .col {
@@ -1479,6 +1478,12 @@ blockquote p {
     float: left;
     width: 50%;
   }
+}
+.article-body .multi-image .col img {
+  padding-bottom: 3em;
+}
+.article-body .multi-image .col.block {
+  clear: left;
 }
 @media only screen and (max-width : 768px) {
   .article-body p + .single-image {

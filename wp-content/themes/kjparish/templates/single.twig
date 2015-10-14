@@ -51,7 +51,7 @@
 					{% elseif content.acf_fc_layout == 'gallery' %}
 						<div class="multi-image">
 							{% for image in content.multi_images %}
-								<div class="col">
+								<div class="col{% if loop.index is divisible by(3) %} block{% endif %}">
 									<img src="{{ TimberImage(image).src|resize(768) }}" alt="{{ post.title }}" />
 								</div>
 							{% endfor %}
