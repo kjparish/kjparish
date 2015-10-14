@@ -1313,7 +1313,7 @@ blockquote p {
 @media only screen and (max-width : 640px) {
   .callout,
   blockquote p {
-    font-size: 1.7em;
+    font-size: 1.4em;
   }
 }
 /* COLORS
@@ -1352,7 +1352,7 @@ blockquote p {
 }
 @media only screen and (max-width : 640px) {
   .single .page-title {
-    font-size: 2em;
+    font-size: 2.4em;
   }
 }
 .single .article-content {
@@ -1363,6 +1363,9 @@ blockquote p {
 .single .article-content .page-title {
   margin: 1em 0;
   color: #606060;
+}
+.single .article-content .page-title + .article-body h4 {
+  margin-top: 0;
 }
 .single .hero {
   margin: 0 auto;
@@ -1478,6 +1481,9 @@ blockquote p {
   }
 }
 @media only screen and (max-width : 768px) {
+  .article-body p + .single-image {
+    margin: 2em 0 1em;
+  }
   .article-body .single-image img,
   .article-body .multi-image img {
     margin: 1em 0;

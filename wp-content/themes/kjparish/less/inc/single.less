@@ -8,7 +8,7 @@
 	.page-title {
 		.make-sm-column(12);
 		@media @xs {
-			font-size: 2em;
+			font-size: 2.4em;
 		}
 	}
 	.article-content {
@@ -16,7 +16,10 @@
 		padding-top: 2em;
 		.page-title {
 			margin: 1em 0;
-			color: lighten(@black, 20%)
+			color: lighten(@black, 20%);
+			+ .article-body h4 {
+				margin-top: 0;
+			}
 		}
 	}
 	.hero {
@@ -88,6 +91,9 @@
 		}
 	}
 	@media @sm {
+		p + .single-image {
+			margin: 2em 0 1em;
+		}
 		.single-image img,
 		.multi-image img {
 			margin: 1em 0;

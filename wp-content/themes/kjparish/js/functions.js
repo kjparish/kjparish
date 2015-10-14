@@ -42,7 +42,7 @@ $(document).ready(function (){
 						} else {
 								header.removeClass('scroll');
 						}
-						if (scroll >= 150) {
+						if (scroll >= 110) {
 								logo.addClass('scroll');
 						} else {
 								logo.removeClass('scroll');
