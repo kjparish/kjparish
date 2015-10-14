@@ -6,11 +6,22 @@
 		z-index: 2;
 		 background: url(images/kj-web.jpg) no-repeat top right fixed; 
 		.background-size(100%);
+		@media @sm {
+			background-size: 220%;
+			a .logo {
+				.opacity(1);
+				.animation(fadeout 3s infinite);
+				.keyframes(~'fadeout, 0%{ opacity: 1; } 100%{ opacity: 0; }');
+				.animation-delay(2);
+				.animation-iteration-count(1);
+				.animation-fill-mode(forwards);
+			}
+		}
 		@media @xs {
 			background-size: 300%;
-			a .logo {
-				display: none;
-			}
+			// a .logo {
+			// 	display: none;
+			// }
 		}
 	}
 	.page-title {

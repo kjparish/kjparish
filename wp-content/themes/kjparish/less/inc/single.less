@@ -11,22 +11,36 @@
 			font-size: 2em;
 		}
 	}
+	.article-content {
+		.page-max-width();
+		padding-top: 2em;
+		.page-title {
+			margin: 1em 0;
+			color: lighten(@black, 20%)
+		}
+	}
+	.hero {
+		margin: 0 auto;
+		&.mobile {
+			display: none;
+		}
+		@media @sm {
+			&.desktop {
+				display: none;
+			}
+			&.mobile {
+				display: block;
+			}
+		}
+		+ .article-content {
+			padding-top: 0;
+		}
+	}
 }
 
-.hero {
-	margin: 0 auto;
-	// &.mobile {
-	// 	display: none;
-	// }
-	// @media @sm {
-	// 	&.desktop {
-	// 		display: none;
-	// 	}
-	// 	&.mobile {
-	// 		display: block;
-	// 	}
-	// }
-}
+
+
+
 
 .article-body {
 	overflow: visible;
@@ -87,14 +101,6 @@
 	}
 }
 
-.article-content {
-	.page-max-width();
-	.page-title {
-		margin: .4em 0 .4em;
-		color: lighten(@black, 20%)
-	}
-}
-
 // Previous and Next Arrow Pagination
 .pagination {
 	position: fixed;
@@ -103,7 +109,8 @@
 	@media @sm {
 		top: auto;
 		position: relative;
-		margin: 1em 0;
+		margin: 2em 0;
+		height: 30px;
 	}
 	a {
 		i,

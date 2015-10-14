@@ -5,7 +5,8 @@
 	<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
 	{% if post.get_field('hero_image_mobile') %}
 		<img class="hero mobile" src="{{ TimberImage(post.get_field('hero_image_mobile')).src }}" />
-	{% elseif post.get_field('hero_image') %}
+	{% endif %}
+	{% if post.get_field('hero_image')%}
 		<img class="hero desktop" src="{{ TimberImage(post.get_field('hero_image')).src }}" />
 	{% endif %}
 	
