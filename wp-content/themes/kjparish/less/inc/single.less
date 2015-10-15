@@ -17,9 +17,6 @@
 		.page-title {
 			margin: 1em 0;
 			color: lighten(@black, 20%);
-			+ .article-body h4 {
-				margin-top: 0;
-			}
 		}
 	}
 	.hero {
@@ -39,11 +36,10 @@
 			padding-top: 0;
 		}
 	}
+	.article-body > h4:first-child {
+		margin: 0 0 1em;
+	}
 }
-
-
-
-
 
 .article-body {
 	overflow: visible;
@@ -61,6 +57,7 @@
 		margin-top: 1em;
 		.divide();
 	}
+
 	h4 {
 		margin: 4em 0 1em;
 		.make-sm-column(12);
@@ -74,6 +71,7 @@
 			margin: 2em 0 1em;
 		}
 	}
+	
 	.single-image {
 		.make-sm-column(12);
 		img {
@@ -84,12 +82,10 @@
 		position: relative;
 		clear: both;
 		padding-top: 3em;
+		padding-bottom: 3em;
 		overflow: auto;
 		.col {
 			.make-sm-column(6);
-			img {
-				padding-bottom: 3em;
-			}
 			&.block {
 				clear: left;
 			}
@@ -99,15 +95,18 @@
 		p + .single-image {
 			margin: 2em 0 1em;
 		}
-		.single-image img,
-		.multi-image img {
-			margin: 1em 0;
+		.single-image,
+		.multi-image {
+			+ h4 {
+				margin-top: 3em;
+			}
+			img {
+				margin: 1em 0;
+			}
+			
 		}
 		.multi-image {
 			padding: 0;
-			img {
-				padding: 1em 0;
-			}
 		}
 	}
 }

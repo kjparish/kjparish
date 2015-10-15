@@ -43,7 +43,7 @@
 					{# single image #}
 					{% elseif content.acf_fc_layout == 'single-image' %}
 						<div class="single-image">
-							<img src="{{ TimberImage(content.single_image).src }}" />
+							<img src="{{ TimberImage(content.single_image).src }}" class="wow fadeIn" />
 						</div>
 						
 
@@ -52,7 +52,7 @@
 						<div class="multi-image">
 							{% for image in content.multi_images %}
 								<div class="col{% if loop.index is divisible by(3) %} block{% endif %}">
-									<img src="{{ TimberImage(image).src|resize(768) }}" alt="{{ post.title }}" />
+									<img src="{{ TimberImage(image).src|resize(768) }}" class="wow fadeIn" alt="{{ post.title }}" />
 								</div>
 							{% endfor %}
 						</div>

@@ -9,7 +9,7 @@ footer {
 		margin-top: 0;
 	}
 	.wrap {
-		padding: 5em 0 8em;
+		padding: 5em 0 2em;
 		.page-max-width();	
 		overflow: auto;
 		@media @xs {
@@ -140,4 +140,38 @@ footer {
 }
 div.wpcf7-validation-errors {
     color: red;
+}
+
+// I made this
+aside {
+	.make-sm-column(8);
+	.make-sm-column-offset(2);
+	padding-top: 2em;
+	padding-bottom: 2em;
+	position: relative;
+	&:before {
+		border-top: solid 3px @black;
+		width: 100%;
+		content: '';
+		display: block;
+		height: 1em;
+	}
+	p {
+		.opacity( 0 );
+		max-height: 0;
+		overflow: hidden;
+		font-size: @small;
+		.transition( all 200ms ease-in-out );
+		a:link, a:hover, a:focus, a:visited {
+			text-decoration: underline;
+		}
+		&.revealed {
+			.opacity( 1 );
+			max-height:400px;
+		}
+	}
+	.icon-arrow-right {
+		display: inline-block;
+		.rotate(90);
+	}
 }

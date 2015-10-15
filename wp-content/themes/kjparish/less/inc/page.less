@@ -4,10 +4,12 @@
 .page {
 	header {
 		z-index: 2;
-		 background: url(images/kj-web.jpg) no-repeat top right fixed; 
-		.background-size(100%);
+		 background: url(images/kj-web.jpg) no-repeat scroll right top; 
+		.background-size(cover);
 		@media @sm {
 			background-size: 220%;
+			height: 60vh;
+
 			a .logo {
 				.opacity(1);
 				.animation(fadeout 3s infinite);

@@ -5,20 +5,17 @@
 header {
 	background: @black;
 	text-align: center;
-	height: 38vw;
+	height: 50vh;
 	position: relative;
 
-	.single & {
-		height: 44vh;
-	}
 	
-	@media @sm {
-		.single &,
-		.home &,
-		.page & {
-			height: 60vh;
-		}
-	}
+	// @media @sm {
+	// 	.single &,
+	// 	.home &,
+	// 	.page & {
+	// 		height: 60vh;
+	// 	}
+	// }
 
 	a {
 		color: @eggshell;
@@ -39,6 +36,10 @@ header {
 		max-height: 12vh;
 		padding: 1em;
 		@media @sm {
+			height: 110px;
+    		width: 330px;
+		}
+		@media @xs {
 			max-height: 80px;
 			max-width: 230px;
 		}

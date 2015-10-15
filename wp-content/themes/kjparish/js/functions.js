@@ -6,7 +6,6 @@ $(document).ready(function (){
 		width: 340
 	});
 
-
 	// Contact Form 7
 
 	$('.wpcf7-form').find('p').contents().unwrap();
@@ -67,8 +66,9 @@ $(document).ready(function (){
 						} else {
 								singlelogo.removeClass('scroll');
 						}
-						
+						$('.page header').css('background-position', 'right ' + ((scroll)) + 'px');
 					}
+					
 			});
 	});
 
@@ -80,6 +80,19 @@ $(document).ready(function (){
 		}
 	});
 
+
+
+
+	var $creditsContainer = $( 'p.credits' );
+	var $creditsToggle = $( '.toggle' );
+
+	$creditsToggle.on( 'click', function () {
+
+		$creditsContainer.toggleClass( 'revealed' );
+		$('html, body').animate({ scrollTop: $(document).height() },'slow');
+		return false;
+
+	});
 	
 
 });

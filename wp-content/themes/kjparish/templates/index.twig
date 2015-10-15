@@ -12,7 +12,7 @@
 		<div id="grid" class="gridalicious">
 
 			{% for post in posts %}
-				<a class="item" href="{{ post.permalink }}">
+				<a class="item wow fadeIn" href="{{ post.permalink }}">
 					<img class="hero" src="{{ TimberImage(post.get_field('project_grid_image')).src|resize(768) }}" />
 					
 					{# Get the project color, and convert hex to RGBA #}
@@ -29,6 +29,7 @@
 			{% endfor %}
 
 		</div><!-- .grid -->
+
 
 	</section>
 
