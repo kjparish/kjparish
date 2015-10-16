@@ -4211,13 +4211,15 @@ blockquote p {
   }
 }
 .single .article-content {
-  max-width: 1280px;
-  margin: 0 auto;
   padding-top: 2em;
 }
 .single .article-content .page-title {
   margin: 1em 0;
   color: #606060;
+}
+.single .article-content .project-content {
+  max-width: 1280px;
+  margin: 0 auto;
 }
 .single .hero {
   margin: 0 auto;
@@ -4237,7 +4239,7 @@ blockquote p {
   padding-top: 0;
 }
 .single .article-body > h4:first-child {
-  margin: 0 0 1em;
+  margin-bottom: 1em;
 }
 .article-body {
   overflow: visible;
@@ -4278,18 +4280,10 @@ blockquote p {
   background: #2d2d2d;
 }
 .article-body h4 {
-  margin: 4em 0 1em;
-  position: relative;
-  min-height: 1px;
+  margin: 4em auto 1em;
   padding-left: 15px;
   padding-right: 15px;
   clear: both;
-}
-@media (min-width: 768px) {
-  .article-body h4 {
-    float: left;
-    width: 100%;
-  }
 }
 .article-body h4 + .callout p,
 .article-body h4 + blockquote p {
@@ -4302,19 +4296,16 @@ blockquote p {
   }
 }
 .article-body .single-image {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-@media (min-width: 768px) {
-  .article-body .single-image {
-    float: left;
-    width: 100%;
-  }
+  clear: both;
 }
 .article-body .single-image img {
-  margin: 3em auto;
+  margin: 0 auto;
+}
+.article-body .single-image.project-content {
+  padding: 2em 15px;
+}
+.article-body .single-image.full-width img {
+  width: 100%;
 }
 .article-body .multi-image {
   position: relative;
@@ -4350,13 +4341,17 @@ blockquote p {
   .article-body .multi-image img {
     margin: 1em 0;
   }
+  .article-body .single-image {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
   .article-body .multi-image {
     padding: 0;
   }
 }
 .pagination {
   position: fixed;
-  top: 50vh;
+  top: 21vh;
   width: 100%;
 }
 @media only screen and (max-width : 768px) {
@@ -4414,7 +4409,7 @@ blockquote p {
   }
 }
 .pagination i {
-  color: #efefed;
+  color: rgba(0, 0, 0, 0.1);
   font-size: 4em;
 }
 @media only screen and (max-width : 768px) {
@@ -5091,15 +5086,16 @@ Post archive
 -------------------------------------------------------------------------------*/
 .page header {
   z-index: 2;
-  background: url(images/kj-web.jpg) no-repeat scroll right top;
+  background: #08171e url(images/kj-web.jpg) no-repeat scroll right top;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
+  padding-bottom: 40%;
 }
 @media only screen and (max-width : 768px) {
   .page header {
     background-size: 220%;
-    height: 60vh;
+    padding-bottom: 80%;
   }
   .page header a .logo {
     zoom: 1;
@@ -5137,6 +5133,7 @@ Post archive
 @media only screen and (max-width : 640px) {
   .page header {
     background-size: 300%;
+    padding-bottom: 110%;
   }
 }
 .page .page-title {

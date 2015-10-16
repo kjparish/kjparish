@@ -103,6 +103,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/images\/admin-logo.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1835,
+		"inputAbbreviatedPath": "\/images\/admin-logo.png",
+		"outputAbbreviatedPath": "\/images\/admin-logo.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/kj-web.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
