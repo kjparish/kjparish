@@ -64,15 +64,15 @@
 	</article>
 	<nav class="pagination">
 
-		{% if post.prev %}
-			<a class="left" href="{{ post.prev.permalink }}">
+		{% if post.next %}
+			<a class="left" href="{{ post.next.permalink }}">
 				<i class="icon-arrow-left"></i>
 				<span>Previous</span>
 			</a>
 		{% endif %}
 
-		{% if post.next %}
-			<a class="right" href="{{ post.next.permalink }}">
+		{% if post.prev %}
+			<a class="right" href="{{ post.prev.permalink }}">
 				<span>Next</span>
 				<i class="icon-arrow-right"></i>
 			</a>
