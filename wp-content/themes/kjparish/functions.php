@@ -52,7 +52,7 @@ class StarterSite extends TimberSite {
 // Replace IMAGELOCATION with your image filename
 function my_custom_login_logo() {
 	echo '<style type="text/css">
-		.login h1 a { background-image:url('.get_bloginfo('template_directory').'/images/) !important; height:260px !important; background-size:210px 221px!important; }
+		.login h1 a { background-image:url('.get_bloginfo('template_directory').'/images/admin-logo.png) !important; height:120px !important; width:120px !important; background-size:100px 100px!important; }
 	</style>';
 }
 add_action('login_head', 'my_custom_login_logo');
