@@ -24,15 +24,15 @@
 
 					{# small caps, with or without a link wrapper #}
 					{% elseif content.acf_fc_layout == 'smcaps' %}
-						{% if content.link %}
-							<h4>
+						<h4>
+							{% if content.link %}
 								<a href="{{ content.link }}" target="_blank">
 									{{ content.small_caps_title }}
 								</a>
-							</h4>
-						{% else %}
-							<h4>{{ content.small_caps_title }}</h4>
-						{% endif %}
+							{% else %}
+								{{ content.small_caps_title }}
+							{% endif %}
+						</h4>
 
 					{# callout #}
 					{% elseif content.acf_fc_layout == 'callout' %}
