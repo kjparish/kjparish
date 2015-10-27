@@ -1,5 +1,8 @@
 /* PAGE
 -------------------------------------------------------------------------------*/
+.page .page-title {
+	display: none;
+}
 
 .page {
 	header {
@@ -13,7 +16,7 @@
 
 			a .logo {
 				.opacity(1);
-				.animation(fadeout 3s infinite);
+				.animation(fadeout 2s infinite);
 				.keyframes(~'fadeout, 0%{ opacity: 1; } 100%{ opacity: 0; }');
 				.animation-delay(2);
 				.animation-iteration-count(1);
@@ -23,14 +26,9 @@
 		@media @xs {
 			background-size: 300%;
 			padding-bottom: 110%;
-			// a .logo {
-			// 	display: none;
-			// }
 		}
 	}
-	.page-title {
-		display: none;
-	}
+	
 	.article-body p {
 		padding-left: 4em;
 		padding-right: 4em;

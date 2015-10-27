@@ -4,10 +4,10 @@
 
 	<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
 	{% if post.get_field('hero_image_mobile') %}
-		<img class="hero mobile" src="{{ TimberImage(post.get_field('hero_image_mobile')).src }}" />
+		<img class="hero mobile wow fadeIn" src="{{ TimberImage(post.get_field('hero_image_mobile')).src }}" />
 	{% endif %}
 	{% if post.get_field('hero_image')%}
-		<img class="hero desktop" src="{{ TimberImage(post.get_field('hero_image')).src }}" />
+		<img class="hero desktop wow fadeIn {% if post.get_field('full_width_hero') %}full{% endif %}" src="{{ TimberImage(post.get_field('hero_image')).src }}" />
 	{% endif %}
 	
 	
@@ -20,7 +20,9 @@
 				{% for content in content %}
 					{# text #}
 					{% if content.acf_fc_layout == 'text' %}
+					<div class="text-block">
 						{{ content.text }}
+					</div>
 
 					{# small caps, with or without a link wrapper #}
 					{% elseif content.acf_fc_layout == 'smcaps' %}
@@ -43,7 +45,8 @@
 					{# single image #}
 					{% elseif content.acf_fc_layout == 'single-image' %}
 						<div class="single-image">
-							<img src="{{ TimberImage(content.single_image).src }}" class="wow fadeIn" />
+							<img src="{{ TimberImage(content.single_image).src }}" class="wow fadeIn {% if content.no_stack %}no-stack{% endif %}
+							" />
 						</div>
 						
 

@@ -93,6 +93,13 @@ $(document).ready(function (){
 		return false;
 
 	});
+
+	// Prevent widows/orphans 
+	$('.article-body p').each(function(){
+		var string = $(this).html();
+		string = string.replace(/ ([^ ]*)$/,'&nbsp;$1');
+		$(this).html(string);
+	});
 	
 
 });
